@@ -15,7 +15,22 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="helloworld.cpp">
+    <ClCompile Include="find_max.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="guess_big_small.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="number_print.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Narcissi_few.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="num7_print.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="multi_table.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

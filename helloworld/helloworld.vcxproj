@@ -139,7 +139,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="helloworld.cpp" />
+    <ClCompile Include="find_max.cpp" />
+    <ClCompile Include="guess_big_small.cpp" />
+    <ClCompile Include="multi_table.cpp" />
+    <ClCompile Include="Narcissi_few.cpp" />
+    <ClCompile Include="num7_print.cpp" />
+    <ClCompile Include="number_print.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
