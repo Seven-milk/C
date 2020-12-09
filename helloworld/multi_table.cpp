@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-int main()
+int main8()
 {
 	int a, b, c = 0;
 	for (int i = 1; i < 10; i++)

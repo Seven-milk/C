@@ -33,5 +33,17 @@
     <ClCompile Include="multi_table.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="find_max_arr.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="arr_resort.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="bubble_sort.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="fun_sum.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

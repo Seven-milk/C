@@ -139,7 +139,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="arr_resort.cpp" />
+    <ClCompile Include="bubble_sort.cpp" />
     <ClCompile Include="find_max.cpp" />
+    <ClCompile Include="find_max_arr.cpp" />
+    <ClCompile Include="fun_sum.cpp" />
     <ClCompile Include="guess_big_small.cpp" />
     <ClCompile Include="multi_table.cpp" />
     <ClCompile Include="Narcissi_few.cpp" />
