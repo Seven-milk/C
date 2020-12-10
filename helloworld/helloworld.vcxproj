@@ -141,14 +141,18 @@
   <ItemGroup>
     <ClCompile Include="arr_resort.cpp" />
     <ClCompile Include="bubble_sort.cpp" />
+    <ClCompile Include="bubble_sort_fun.cpp" />
     <ClCompile Include="find_max.cpp" />
     <ClCompile Include="find_max_arr.cpp" />
     <ClCompile Include="fun_sum.cpp" />
     <ClCompile Include="guess_big_small.cpp" />
+    <ClCompile Include="hero_struct.cpp" />
     <ClCompile Include="multi_table.cpp" />
     <ClCompile Include="Narcissi_few.cpp" />
     <ClCompile Include="num7_print.cpp" />
     <ClCompile Include="number_print.cpp" />
+    <ClCompile Include="point_study.cpp" />
+    <ClCompile Include="teacher_stu_struct.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -45,5 +45,17 @@
     <ClCompile Include="fun_sum.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="point_study.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="bubble_sort_fun.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="teacher_stu_struct.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="hero_struct.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
