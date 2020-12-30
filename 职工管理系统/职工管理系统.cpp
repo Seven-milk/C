@@ -29,7 +29,7 @@ int main()
 	WorkerManager wm;
 	int choice;
 
-	test01();
+	//test01();
 	while (true)
 	{
 		// 展示菜单
@@ -44,6 +44,7 @@ int main()
 			wm.exitSystem();
 			break;
 		case 1: // 添加职工
+			wm.Add_Emp();
 			break;
 		case 2: // 显示职工
 			break;
