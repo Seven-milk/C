@@ -317,6 +317,22 @@ void WorkerManager::Del_Emp()
 
 }
 
+void WorkerManager::Mod_Emp()
+{
+	if (this->m_FileIsEmpty)
+	{
+		cout << "文件不存在或记录为空！" << endl;
+	}
+	else
+	{
+		cout << "请输入职工编号" << endl;
+		int id;
+		cin >> id;
+
+
+	}
+}
+
 WorkerManager::~WorkerManager()
 {
 	if (this->m_EmpArray != NULL)

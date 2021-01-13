@@ -42,6 +42,9 @@ public:
 	// 删除职工
 	void Del_Emp();
 
+	// 修改职工
+	void Mod_Emp();
+
 	// 析构函数
 	~WorkerManager();
 
