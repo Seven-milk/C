@@ -53,12 +53,16 @@ int main()
 			wm.Del_Emp();
 			break;
 		case 4: // 修改职工
+			wm.Mod_Emp();
 			break;
 		case 5: // 查找职工
+			wm.Find_Emp();
 			break;
 		case 6: // 按编号排序
+			wm.Sort_Emp();
 			break;
 		case 7: // 清空文档
+			wm.Clean_File();
 			break;
 		}
 	}
