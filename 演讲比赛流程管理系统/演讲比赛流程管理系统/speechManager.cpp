@@ -1,10 +1,4 @@
 #include "speechManager.h";
-#include<algorithm>;
-#include<deque>;
-#include<functional>;
-#include<numeric>;
-#include <fstream>;
-#define filePath "speech.csv"
 
 // 构造
 SpeechManager::SpeechManager()
@@ -48,6 +42,8 @@ void SpeechManager::initSpeech()
 	this->m_Speaker.clear();
 	// 初始化比赛轮数
 	this->m_Index = 1;
+	// 清空记录容器
+	this->m_Record.clear();
 };
 
 // 创建选手
@@ -212,7 +208,7 @@ void SpeechManager::showScore()
 void SpeechManager::saveRecord()
 {
 	ofstream ofs;
-	ofs.open("speech.csv", ios::out | ios::app); // 用输出的方式打开文件，追加方式
+	ofs.open(filePath, ios::out | ios::app); // 用输出的方式打开文件，追加方式
 
 	// 存储每个人的数据
 	for (vector<int>::iterator it = this->vVictory.begin(); it != this->vVictory.end(); it++)
@@ -226,6 +222,8 @@ void SpeechManager::saveRecord()
 	ofs.close();
 
 	cout << "已保存记录" << endl;
+
+	this->fileIsEmpty == false;
 
 }
 
@@ -248,14 +246,21 @@ void SpeechManager::startSpeech()
 	this->showScore();
 	// 保存分数
 	this->saveRecord();
-	
+	// 重置比赛
+	// 初始化属性
+	this->initSpeech();
+	// 创建选手
+	this->createSpeaker();
+	// 获取往届记录
+	this->loadRecord();
+
 	// 清屏
 	cout << "本届比赛完毕！" << endl;
 	system("pause");
 	system("cls");
 };
 
-// 查看记录
+// 加载记录
 void SpeechManager::loadRecord()
 {
 	ifstream ifs(filePath, ios::in); // 写入方式读入
@@ -282,26 +287,86 @@ void SpeechManager::loadRecord()
 	int index = 0;
 	while (ifs >> data) // 右移读取，读取每一行数据（会一行行读），需要进行分割（","分割），相当于分词操作
 	{
-		vector<string>v;
-		int pos = -1;
-		int start = 0;
-		while (true)
+		// 每一行：1000,2000,3000,1000,3000,1000,
+		// 分词思路：由于","分割，先找到","位置，用substring截取出来
+		vector<string>v; // 用于存储截取的数据
+		int pos = -1; // 默认没查到
+		int start = 0; // 起始位置0
+		while (true) // 一直找，直到找不到","再break
 		{
 			pos = data.find(",", start); // 从0开始查找","
+			// 找不到","
 			if (pos == -1)
 			{
 				break; // 找不到break返回
 			}
-			string tmp = data.substr(start, pos - start); // 找到了进行分割：start(起始位置),pos-start(截取长度)
-			v.push_back(tmp);
-			start = pos + 1;
+			// 找到","
+			string tmp = data.substr(start, pos - start); // 找到了进行分割：start(起始位置),pos-start(截取长度)，临时存储在tmp
+			v.push_back(tmp); // 将截取的临时值存放到vector中
+			start = pos + 1; // 下次寻找，起始位置修正
 		}
 		this->m_Record.insert(make_pair(index, v)); // 将分割后的每个单元放入v中，然后存放到m_Record中，key是序号index，value是vector
 		index++;
 	}
 	ifs.close();
+	// 测试
+	/*for (map<int, vector<string>>::iterator it = this->m_Record.begin(); it != this->m_Record.end(); it++)
+	{
+		cout << "第" << (*it).first << "届冠军编号：" << (*it).second[0] << " 分数:" << (*it).second[1] << endl;
+	}*/
 
 };
+
+// 查看记录
+void SpeechManager::showRecord()
+{
+	if (this->fileIsEmpty)
+	{
+		cout << "文件不存在或为空" << endl;
+	}
+	else
+	{
+		for (int i = 0; i < this->m_Record.size(); i++)
+		{
+			cout << "第" << i + 1 << "届" <<
+				"冠军编号：" << this->m_Record[i][0] << " 得分：" << this->m_Record[i][1] << " "
+				"亚军编号：" << this->m_Record[i][2] << " 得分：" << this->m_Record[i][3] << " "
+				"季军编号：" << this->m_Record[i][4] << " 得分：" << this->m_Record[i][5] << " "
+				<< endl;
+		}
+	}
+	system("pause");
+	system("cls");
+};
+
+// 清空记录
+void SpeechManager::clearRecord()
+{
+	cout << "确认清空？" << endl;
+	cout << "1.确认" << endl;
+	cout << "2.返回" << endl;
+	int choice;
+	cin >> choice;
+
+	if (choice == 1)
+	{
+		// 打开模式ios::trunc 如果存在删除文件并重新创建
+		ofstream ofs(filePath, ios::trunc);
+		ofs.close();
+
+		// 重置比赛，让查询更新
+		// 初始化属性
+		this->initSpeech();
+		// 创建选手
+		this->createSpeaker();
+		// 获取往届记录
+		this->loadRecord();
+
+		cout << "清空成功！" << endl;
+	}
+	system("pause");
+	system("cls");
+}
 
 // 析构
 SpeechManager::~SpeechManager() {};

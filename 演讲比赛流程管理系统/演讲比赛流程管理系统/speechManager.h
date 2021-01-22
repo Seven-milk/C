@@ -4,6 +4,12 @@ using namespace std;
 #include<vector>;
 #include<map>;
 #include"speaker.h";
+#include<algorithm>;
+#include<deque>;
+#include<functional>;
+#include<numeric>;
+#include <fstream>;
+#define filePath "speech.csv"
 
 class SpeechManager 
 {
@@ -41,8 +47,14 @@ public:
 	// 保存分数函数
 	void saveRecord();
 
-	// 查看记录
+	// 加载记录
 	void loadRecord();
+
+	// 查看记录
+	void showRecord();
+
+	// 清空记录
+	void clearRecord();
 
 	// 成员属性
 	// 	存放比赛选手编号的容器（12人）

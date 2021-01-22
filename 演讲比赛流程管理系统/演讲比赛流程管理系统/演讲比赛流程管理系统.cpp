@@ -1,10 +1,13 @@
 #include <iostream>
 using namespace std;
 #include "speechManager.h";
+#include<ctime>;
 
 
 int main()
 {
+	// 随机数种子
+	srand((unsigned int) time(NULL));
 	SpeechManager sm;
 	// 测试
 	/*for (map<int, Speaker>::iterator it = sm.m_Speaker.begin(); it != sm.m_Speaker.end(); it++)
@@ -27,10 +30,11 @@ int main()
 		case 1: // 开始比赛
 			sm.startSpeech();
 			break;
-		case2: // 查看记录
-			sm.loadRecord();
+		case 2: // 查看记录
+			sm.showRecord();
 			break;
-		case3: // 清空记录
+		case 3: // 清空记录
+			sm.clearRecord();
 			break;
 		case 0: // 退出系统
 			sm.exitSystem();
