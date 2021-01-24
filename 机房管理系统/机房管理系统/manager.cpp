@@ -41,7 +41,7 @@ void Manager::operMenu()
 	cout << "\t\t|                               |\n";
 	cout << "\t\t|        4.Çå¿ÕÔ¤Ô¼             |\n";
 	cout << "\t\t|                               |\n";
-	cout << "\t\t|        5.×¢ÏúµÇÂ¼             |\n";
+	cout << "\t\t|        0.×¢ÏúµÇÂ¼             |\n";
 	cout << "\t\t|                               |\n";
 	cout << "\t\t ------------------------------- \n";
 	cout << "ÇëÑ¡ÔñÄúµÄ²Ù×÷£º" << endl;

@@ -8,6 +8,7 @@ using namespace std;
 #include<fstream>
 #include<string>
 
+// 管理员菜单
 void managerMenu(Identity*& manager)
 {
 	while (true)
@@ -50,6 +51,80 @@ void managerMenu(Identity*& manager)
 		}
 	}
 }
+
+// 学生菜单
+void studentMenu(Identity*& student)
+{
+	while (true)
+	{
+		// 学生菜单
+		student->operMenu();
+
+		Student* stu = (Student*)student; // 父类指针指向子类对象，再强转为子类
+		int select = 0;
+
+		cin >> select;
+
+		if (select == 1) // 申请预约
+		{
+			stu->applyOrder();
+		}
+		else if (select == 2) // 查看自身预约
+		{
+			stu->showMyOrder();
+		}
+		else if (select == 3) // 查看所有预约
+		{
+			stu->showAllOrder();
+		}
+		else if (select == 4) // 取消预约
+		{
+			stu->cancelOrder();
+		}
+		else // 退出注销
+		{
+			delete student; // 堆区数据手动释放
+			cout << "注销成功" << endl;
+			system("pause");
+			system("cls");
+			return; // 返回上一单元
+		}
+	}
+}
+
+// 老师菜单
+void TeacherMenu(Identity*& teacher)
+{
+	while (true)
+	{
+		// 教师子菜单
+		teacher->operMenu();
+
+		Teacher* tea = (Teacher*)teacher; // 强转为子类
+
+		int select = 0;
+		cin >> select;
+		if (select == 1)
+		{
+			// 查看所有预约
+			tea->showAllOrder();
+		}
+		else if (select == 2)
+		{
+			// 审核预约
+			tea->validOrder();
+		}
+		else // 注销登陆
+		{
+			delete teacher;
+			cout << "注销成功" << endl;
+			system("pause");
+			system("cls");
+			return;
+		}
+
+	}
+};
 
 void LoginIn(string fileName, int type)
 {
@@ -109,7 +184,7 @@ void LoginIn(string fileName, int type)
 				system("cls");
 				person = new Student(id, name, pwd); // 创建学生类，让父指针指向
 				// 进入学生类子菜单
-
+				studentMenu(person);
 				return;
 			}
 
@@ -133,7 +208,7 @@ void LoginIn(string fileName, int type)
 				system("cls");
 				person = new Teacher(id, name, pwd); // 创建老师类，让父指针指向
 				// 进入老师类子菜单
-
+				TeacherMenu(person);
 				return;
 			}
 		}
