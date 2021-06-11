@@ -17,12 +17,13 @@
  */
 #include <stdio.h>
 #include <math.h>
+#define ratio 0.8
 
 void main()
 {
-		float x,s;
-		printf("input number:\n");
-		scanf("%1f", &x);
-		s=sin(x);
-		printf("sin of %1f is %1f\n", x, s);
+		float pre,runoff;
+		printf("input pre:\n");
+		scanf("%3f", &pre);
+		runoff=pre * ratio;
+		printf("pre %3f -> runoff %2f\n", pre, runoff);
 };
