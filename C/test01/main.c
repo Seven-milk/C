@@ -21,7 +21,6 @@
 
 void main()
 {
-	printf("%f\n", 1.0 / 3 * 3);
-	printf("%f\n", 2 / 3);
-	printf("%f\n", 1 / 3 * 3);
+	char a = 'X';
+	printf("%d, (int)a=%d, %c\n", a, (int)a, a + 32);
 }
