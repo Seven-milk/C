@@ -21,9 +21,7 @@
 
 void main()
 {
-		float pre,runoff;
-		printf("input pre:\n");
-		scanf("%3f", &pre);
-		runoff=pre * ratio;
-		printf("pre %3f -> runoff %2f\n", pre, runoff);
-};
+	printf("%f\n", 1.0 / 3 * 3);
+	printf("%f\n", 2 / 3);
+	printf("%f\n", 1 / 3 * 3);
+}
