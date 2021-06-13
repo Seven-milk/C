@@ -20,21 +20,7 @@
 
 void main()
 {
-	int i=5, j=5, p, q;
-	p = (i++);
-	q = (++j);
-	printf("p=%d, q=%d, i=%d, j=%d\n", p, q, i, j);
-	
-	i = 5;
-	j = 5;
-	p = (i++)+(i++);
-	q = (++j)+(++j);
-	printf("p=%d, q=%d, i=%d, j=%d\n", p, q, i, j);
-
-	
-	i = 5;
-	j = 5;
-	p = (i++)+(i++)+(i++);
-	q = (++j)+(++j)+(++j);
-	printf("p=%d, q=%d, i=%d, j=%d\n", p, q, i, j);
-}
+	int a=2, b=4, c=6, x, y;
+	y = ((x = a + b), (b + c));
+	printf("y=%d, x=%d\n", y, x);
+};
