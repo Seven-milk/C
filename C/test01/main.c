@@ -20,7 +20,12 @@
 
 void main()
 {
-	int a=2, b=4, c=6, x, y;
-	y = ((x = a + b), (b + c));
-	printf("y=%d, x=%d\n", y, x);
-};
+	int a=5, b=2, c=3;
+	int *p1, *p2, *p3;
+	p1 = &a;
+	p2 = &b;
+	p3 = &c;
+	printf("%d, %d, %d\n", &a, &b, &c);
+	printf("%d, %d, %d\n", p1, p2, p3);
+	printf("%d, %d, %d\n", *p1, *p2, *p3);
+}
