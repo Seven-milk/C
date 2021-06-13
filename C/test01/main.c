@@ -20,25 +20,6 @@
 
 void main()
 {
-	double a, b, c, p, q, x1, x2;
-	while(1)
-	{
-		printf("input the coef of function: ax2+bx+c=0\n");
-		scanf("%lf%lf%lf", &a, &b, &c);
-		getchar();
-		if (b * b - 4.0 * a * c > 0)
-		{	
-			break;
-		}
-		else
-		{
-			printf("b2 - 4ac = %lf < 0\n", b * b - 4.0 * a * c);
-		}
-	}
-	p = -b / 2.0 / a;
-	q = sqrt(b * b - 4.0 * a * c) / 2.0 / a;
-	x1 = p + q;
-	x2 = p - q;
-	printf("root is x1=%lf, x2=%lf\n", x1, x2);
-	printf("p=%lf, q=%lf\n", p, q);
+	int a=1, b=2;
+	printf("%d\n", a < b);
 }
