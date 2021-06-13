@@ -17,10 +17,24 @@
  */
 #include <stdio.h>
 #include <math.h>
-#define ratio 0.8
 
 void main()
 {
-	char a = 'X';
-	printf("%d, (int)a=%d, %c\n", a, (int)a, a + 32);
+	int i=5, j=5, p, q;
+	p = (i++);
+	q = (++j);
+	printf("p=%d, q=%d, i=%d, j=%d\n", p, q, i, j);
+	
+	i = 5;
+	j = 5;
+	p = (i++)+(i++);
+	q = (++j)+(++j);
+	printf("p=%d, q=%d, i=%d, j=%d\n", p, q, i, j);
+
+	
+	i = 5;
+	j = 5;
+	p = (i++)+(i++)+(i++);
+	q = (++j)+(++j)+(++j);
+	printf("p=%d, q=%d, i=%d, j=%d\n", p, q, i, j);
 }
