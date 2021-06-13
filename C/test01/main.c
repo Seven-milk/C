@@ -20,12 +20,9 @@
 
 void main()
 {
-	int a=5, b=2, c=3;
-	int *p1, *p2, *p3;
-	p1 = &a;
-	p2 = &b;
-	p3 = &c;
-	printf("%d, %d, %d\n", &a, &b, &c);
-	printf("%d, %d, %d\n", p1, p2, p3);
-	printf("%d, %d, %d\n", *p1, *p2, *p3);
+	double a, b, c, area, s;
+	scanf("%lf%lf%lf", &a, &b, &c);
+	s = (a + b + c) / 2.0;
+	area = sqrt(s * (s - a) * (s - b) * (s - c));
+	printf("area is %7.2lf\n", area);
 }
