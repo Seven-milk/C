@@ -20,6 +20,11 @@
 
 void main()
 {
-	int a=1, b=2;
-	printf("%d\n", a < b);
+	int i=1, s=0;
+	while(i<=100)
+	{
+		s = s + i;
+		i++;
+	}
+	printf("%d\n", s);
 }
