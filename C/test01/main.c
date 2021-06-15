@@ -20,12 +20,10 @@
 
 void main()
 {
-	int i=0, s=0;
-	do
-		{
-			s = s + i;
-			i++;
-		}
-	while(i<=100);
+	int s=0;
+	for(int i=0; i<=100; i++)
+	{
+		s = s + i;
+	}
 	printf("%d\n", s);
 }
