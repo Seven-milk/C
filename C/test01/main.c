@@ -20,11 +20,12 @@
 
 void main()
 {
-	int i=1, s=0;
-	while(i<=100)
-	{
-		s = s + i;
-		i++;
-	}
+	int i=0, s=0;
+	do
+		{
+			s = s + i;
+			i++;
+		}
+	while(i<=100);
 	printf("%d\n", s);
 }
