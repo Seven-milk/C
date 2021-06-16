@@ -34,5 +34,5 @@ double max(double x, double y)
 {
 	double z;
 	z = x > y ? x : y;
-	return(z);
+	return z;
 }
