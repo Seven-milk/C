@@ -21,25 +21,16 @@
 void main()
 
 {
-	int f(int x);
-	int x, y;
+	void f(int x[5]);
+	int a[5]={1,2,3,4,5};
 
-	printf("input x\n");
-	scanf("%d", &x);
-	y=f(x);
-	printf("%d\n", y);
+	f(a);
 }
 
-int f(int x)
+void f(int * x)
 {
-	int z;
-	if (x > 1)
+	for (int i=0; i<5; i++)
 	{
-		z = x * f(x-1);	
+		printf("%d\n", x[i]);
 	}
-	else if(x == 1 || x == 0)
-	{
-		z = 1;
-	}
-	return z;
 }
