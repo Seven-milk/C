@@ -21,18 +21,25 @@
 void main()
 
 {
-	double max(double x, double y);
-	double x, y, z;
+	int f(int x);
+	int x, y;
 
-	printf("input x and y to compare\n");
-	scanf("%lf%lf", &x, &y);
-	z=max(x, y);
-	printf("the big one=%lf\n", z);
+	printf("input x\n");
+	scanf("%d", &x);
+	y=f(x);
+	printf("%d\n", y);
 }
 
-double max(double x, double y)
+int f(int x)
 {
-	double z;
-	z = x > y ? x : y;
+	int z;
+	if (x > 1)
+	{
+		z = x * f(x-1);	
+	}
+	else if(x == 1 || x == 0)
+	{
+		z = 1;
+	}
 	return z;
 }
