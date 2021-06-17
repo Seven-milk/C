@@ -1,12 +1,12 @@
 /*
  * =====================================================================================
  *
- *       Filename:  main.c
+ *       Filename:  power.c
  *
- *    Description: test01 
+ *    Description:  
  *
  *        Version:  1.0
- *        Created:  06/11/2021 01:50:41 AM
+ *        Created:  2021年06月17日 15时20分55秒
  *       Revision:  none
  *       Compiler:  gcc
  *
@@ -15,16 +15,9 @@
  *
  * =====================================================================================
  */
-#include <stdio.h>
-#include <math.h>
+#include <stdlib.h>
 
-void main()
-
+int power(int x)
 {
-	int power(int);
-	int b;
-	scanf("%d", &b);
-	printf("%d\n", power(b));
+	return x * x;
 }
-
-
