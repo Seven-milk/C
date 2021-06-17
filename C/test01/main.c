@@ -18,9 +18,12 @@
 #include <stdio.h>
 #include <math.h>
 
+int b;
+
 void main()
 
 {
+	scanf("%d", &b);
 	void f(int x[5]);
 	int a[5]={1,2,3,4,5};
 
@@ -29,8 +32,10 @@ void main()
 
 void f(int * x)
 {
+	extern int b;
 	for (int i=0; i<5; i++)
 	{
-		printf("%d\n", x[i]);
+		printf("%d\n", b * x[i]);
 	}
 }
+
