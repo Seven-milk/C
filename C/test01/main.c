@@ -18,13 +18,33 @@
 #include <stdio.h>
 #include <math.h>
 
+void swap(char *p1, char *p2);
+void printfs(char *p1);
+
 void main()
 
 {
-	int power(int);
-	int b;
-	scanf("%d", &b);
-	printf("%d\n", power(b));
+	char s1[10], s2[10], *p1, *p2;
+
+	p1 = s1;
+	p2 = s2;
+	printf("input string1\n");
+	scanf("%s", p1);
+	printf("input string2\n");
+	scanf("%s", p2);
+
+	printf("s1:");
+	printfs(s1);
+	printf("s2:");
+	printfs(s2);
+
+	swap(p1, p2);
+	
+	printf("s1:");
+	printfs(s1);
+	printf("s2:");
+	printfs(s2);
+
 }
 
 
