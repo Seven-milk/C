@@ -23,19 +23,28 @@ int main()
 {
 	Stack S;
 	ElemType e;
-	cout << S.stacksize << endl;
-	cout << *S.base << *S.top << endl;
-	//cout << "insert: " << insert  << endl;
-	//bool empty = L.IsEmpty();
-	//cout << "Is empty: " << empty << endl;
-	//int n=1;
-	//L.GetElem(n, e);
-	//cout << "elem in " << n << endl; 
-	//e.print();
-	//bool destory = L.DestoryList();
-	//cout << "Is destory: " << destory << endl;
-	//bool clear = L.ClearList();
-	//cout << "Is clear: " << clear << endl;
-	//int len = L.GetLength();
-	//cout << "Len: " << len << endl;
+	bool empty;
+	empty = S.StackEmpty();
+	cout << "Is empty: " << empty << endl;
+
+	ElemType a = 5;	
+	bool push;
+	push = S.Push(a);
+	cout << "push:" << push << endl;
+	cout << "top:"<< S.top->data << endl;
+	empty = S.StackEmpty();
+	cout << "Is empty: " << empty << endl;
+	bool gettop;
+	gettop = S.GetTop(&e);
+	cout << "GetTop: " << gettop << endl;
+	cout << "top: " << e << endl;
+
+	bool pop;
+	pop = S.Pop(&e);
+	cout << "pop: " << pop << endl;
+	cout << "e: " << e << endl;
+
+	bool clear;
+	clear = S.ClearStack();
+	cout << "Is clear: " << clear << endl;
 }

@@ -26,19 +26,33 @@
 using namespace std;
 typedef int ElemType;
 
+class StackNode{
+public:
+	// variables
+	ElemType data;
+	StackNode *next;
+};
+
 class Stack{
 public:
-	// method
+	// function
 	Stack();
 
 	~Stack();
 
-	// variable
-	int stacksize;
-	
-	ElemType *base;
-	
-	ElemType *top;
+	bool StackEmpty();
 
+	bool ClearStack();
+
+	bool DestoryStack();
+
+	bool Push(ElemType);
+
+	bool Pop(ElemType*);
+
+	bool GetTop(ElemType*);
+
+	// variable	
+	StackNode *top;
 
 };
