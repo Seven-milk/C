@@ -45,10 +45,14 @@ public:
 	
 	int LocateElem(ElemType e);
 
+	bool ListInsert_Sq(int i, ElemType e);
+
+	bool ListDelete(int i);
+
+	void ListTraverse(void (*p)(ElemType));
 
 	// element 
 	ElemType *elem;
 
-private:
 	int length;
 };

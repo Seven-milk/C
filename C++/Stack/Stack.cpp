@@ -1,28 +1,31 @@
 /*
  * =====================================================================================
  *
- *       Filename:  main.cpp
+ *       Filename:  Stack.cpp
  *
  *    Description:  
  *
  *        Version:  1.0
- *        Created:  2021年06月29日 17时04分57秒
+ *        Created:  2021年08月04日 00时10分53秒
  *       Revision:  none
- *       Compiler:  g++
+ *       Compiler:  gcc
  *
  *         Author:  XudongZheng (), z786909151@163.com
  *   Organization:  
  *
  * =====================================================================================
  */
-#include <iostream>
-#include "LinearList.h"
-using namespace std;
+#include <stdlib.h>
+#include <stdio.h>
+#include "Stack.h"
 
-int main()
-{
-	LinearList L;
-	int len = L.GetLength();
-	bool empty = L.IsEmpty();
-	cout << "len=" << len << " is empty = " << empty << endl;
+Stack::Stack(){
+	this->base = new ElemType[MAXSIZE];
+	if (!this->base) exit(OVERFLOW);
+	this->top = this->base;
+	this->stacksize = MAXSIZE;
+}
+
+Stack::~Stack(){
+	delete this->base;
 }
