@@ -44,6 +44,11 @@ public:
 	bool GetElem(int i, ElemType &e);
 	
 	int LocateElem(ElemType e);
+<<<<<<< HEAD
+=======
+	
+	bool ListInsert_Sq(int i, ElemType e);
+>>>>>>> e08ec6af92c47647cd5d792d21084ff7ead35513
 
 	bool ListInsert_Sq(int i, ElemType e);
 
