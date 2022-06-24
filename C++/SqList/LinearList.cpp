@@ -66,5 +66,33 @@ int LinearList::LocateElem(ElemType e)
 
 bool LinearList::ListInsert_Sq(int i, ElemType e)
 {
+	if (i < 0 || i > this->length) return false;
+	if (this->length == MAXSIZE) return false;
+	for (int j=this->length-1; j>=i; j--)
+	{
+		this->elem[j+1] == this->elem[j];
+	}
+	this->elem[i] = e;
+	this->length++;
+	return true;
+}
 
+bool LinearList::ListDelete(int i)
+{
+	if (i < 0 || i > this->length-1) return false;
+	ElemType e = this->elem[i];
+	for (int j = i; j <= this->length - 1; j++)
+	{
+		this->elem[j] = this->elem[j+1];
+	}
+	this->length--;
+	return true;
+}
+
+void LinearList::ListTraverse(void (*p)(ElemType))
+{
+	for(int i=0; i < this->length; i++)
+	{
+		(*p)(this->elem[i]);
+	}
 }

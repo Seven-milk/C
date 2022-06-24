@@ -22,7 +22,9 @@ using namespace std;
 int main()
 {
 	LinearList L;
+	for(int i=0; i<10; i++) L.ListInsert_Sq(i, i);
 	int len = L.GetLength();
 	bool empty = L.IsEmpty();
 	cout << "len=" << len << " is empty = " << empty << endl;
+	for (int i=0; i<L.length; i++) cout << L.elem[i] << endl;
 }
