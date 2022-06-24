@@ -63,3 +63,8 @@ int LinearList::LocateElem(ElemType e)
 	}
 	return 0;
 }
+
+bool LinearList::ListInsert_Sq(int i, ElemType e)
+{
+
+}
