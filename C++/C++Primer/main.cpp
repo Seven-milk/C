@@ -20,6 +20,10 @@
 
 int main()
 {
-	int x=2, y=2*x;
-	std::cout << x << " " << y <<  std::endl;
+	int x=1, y=2;
+	for (;x<=10;x++)
+	{
+		x += y;
+	}
+	std::cout << "x="  << x  << std::endl;
 }
